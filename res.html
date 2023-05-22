@@ -203,7 +203,6 @@ div.csl-indent {
 <div id="res" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Capítulo 6</span> Resultados<a href="res.html#res" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>A continuación vamos a mostrar los resultados de los mejores modelos obtenidos de redes neuronales, máquinas de soporte vectorial y árboles de decisión. Para cada uno se ha empleado el método de filtrado <code>chi.squared</code> y el método wrapper <code>stepAIC</code>. Se muestran los valores de precisión, f1-score, y auc. Es importante destacar que las dos primeras medidas están completamente condicionadas por el umbral escogido para determinar qué probabilidades consideremos como 0 o 1. Nosotros hemos usado la función <code>coords</code> del paquete <code>pROC</code> para obtener ese <em>cut-off</em>.</p>
-<p>Lo dejamos así por si en un futuro conseguimos arreglar el problema no tener que modificar las tablas.</p>
 <table>
 <caption><span id="tab:red0">Table 6.1: </span>Métricas de los algoritmos para k=10</caption>
 <thead>
