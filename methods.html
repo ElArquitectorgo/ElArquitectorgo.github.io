@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Metodología | Trabajo final de curso</title>
+  <title>Capítulo 2 Metodología | Trabajo final de curso</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Metodología | Trabajo final de curso" />
+  <meta property="og:title" content="Capítulo 2 Metodología | Trabajo final de curso" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Metodología | Trabajo final de curso" />
+  <meta name="twitter:title" content="Capítulo 2 Metodología | Trabajo final de curso" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -155,7 +155,7 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Trabajo fin de curso</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
@@ -172,11 +172,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="kfold.html"><a href="kfold.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.1</b> K-fold cross validation</a></li>
 <li class="chapter" data-level="5.2" data-path="kfold.html"><a href="kfold.html#métricas"><i class="fa fa-check"></i><b>5.2</b> Métricas</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="resultados.html"><a href="resultados.html"><i class="fa fa-check"></i><b>6</b> Resultados</a>
+<li class="chapter" data-level="6" data-path="res.html"><a href="res.html"><i class="fa fa-check"></i><b>6</b> Resultados</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="resultados.html"><a href="resultados.html#redes-neuronales"><i class="fa fa-check"></i><b>6.1</b> Redes Neuronales</a></li>
-<li class="chapter" data-level="6.2" data-path="resultados.html"><a href="resultados.html#máquinas-de-soporte-vectorial"><i class="fa fa-check"></i><b>6.2</b> Máquinas de soporte vectorial</a></li>
-<li class="chapter" data-level="6.3" data-path="resultados.html"><a href="resultados.html#árboles-de-decisión"><i class="fa fa-check"></i><b>6.3</b> Árboles de decisión</a></li>
+<li class="chapter" data-level="6.1" data-path="res.html"><a href="res.html#redes-neuronales"><i class="fa fa-check"></i><b>6.1</b> Redes Neuronales</a></li>
+<li class="chapter" data-level="6.2" data-path="res.html"><a href="res.html#máquinas-de-soporte-vectorial"><i class="fa fa-check"></i><b>6.2</b> Máquinas de soporte vectorial</a></li>
+<li class="chapter" data-level="6.3" data-path="res.html"><a href="res.html#árboles-de-decisión"><i class="fa fa-check"></i><b>6.3</b> Árboles de decisión</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>7</b> Conclusiones</a></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
@@ -201,9 +201,9 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="methods" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Metodología<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Capítulo 2</span> Metodología<a href="methods.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Contamos con un dataset de 299 muestras que analizaremos en detalle mediante análisis descriptivo e inferencia estadística con el fin de preparar los datos de cara a usarlos para entrenar correctamente a los modelos de <em>machine learning</em>.
-Para encontrar el mejor modelo predictivo vamos a comparar los resultados de distintos algoritmos como son las redes neuronales, máquinas de soporte vectorial y árboles de decisión, basándonos principalmente en el área bajo la curva ROC, así como en el f1-score. Usaremos librerías de R para realizar selección de variables, filtrado o wrapper. Para poder obtener y comparar los resultados vamos a implementar un método de validación cruzada para hacer una estimación honesta de la capacidad predictiva de cada modelo. En el capítulo <a href="kfold.html#kfold">5</a> se explicará en detalle cómo.</p>
+Para encontrar el mejor modelo predictivo vamos a comparar los resultados de distintos algoritmos como son las redes neuronales, máquinas de soporte vectorial y árboles de decisión, basándonos principalmente en el área bajo la curva ROC. Usaremos librerías de R para realizar selección de variables, filtrado o wrapper. Para poder obtener y comparar los resultados vamos a implementar un método de validación cruzada para hacer una estimación honesta de la capacidad predictiva de cada modelo. En el capítulo <a href="kfold.html#kfold">5</a> se explicará en detalle cómo.</p>
 <p>Iremos realizando pruebas con múltiples parámetros en cada algoritmo y evaluando los resultados de cada prueba para ir acotando los parámetros óptimos. Esta evaluación estará basada en el número de veces que aparece ese parámetro en las <em>k</em> iteraciones, el <em>AUC</em> medio asociado a ese parámetro y en caso de dudas, atendiendo al criterio personal.</p>
 
 </div>

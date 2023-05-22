@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 Estadísitca descriptiva e inferencia estadística | Trabajo final de curso</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 Estadísitca descriptiva e inferencia estadística | Trabajo final de curso" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 Estadísitca descriptiva e inferencia estadística | Trabajo final de curso" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Víctor Guirado Osorio" />
+
+
+<meta name="date" content="2023-05-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="dataset.html"/>
+<link rel="next" href="kfold.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Trabajo fin de curso</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>2</b> Metodología</a></li>
+<li class="chapter" data-level="3" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>3</b> Dataset</a></li>
+<li class="chapter" data-level="4" data-path="ana.html"><a href="ana.html"><i class="fa fa-check"></i><b>4</b> Estadísitca descriptiva e inferencia estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ana.html"><a href="ana.html#análisis-univariante"><i class="fa fa-check"></i><b>4.1</b> Análisis univariante</a></li>
+<li class="chapter" data-level="4.2" data-path="ana.html"><a href="ana.html#análisis-bivariante"><i class="fa fa-check"></i><b>4.2</b> Análisis bivariante</a></li>
+<li class="chapter" data-level="4.3" data-path="ana.html"><a href="ana.html#análisis-multivariante"><i class="fa fa-check"></i><b>4.3</b> Análisis multivariante</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="kfold.html"><a href="kfold.html"><i class="fa fa-check"></i><b>5</b> Validación y evaluación</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kfold.html"><a href="kfold.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.1</b> K-fold cross validation</a></li>
+<li class="chapter" data-level="5.2" data-path="kfold.html"><a href="kfold.html#métricas"><i class="fa fa-check"></i><b>5.2</b> Métricas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="res.html"><a href="res.html"><i class="fa fa-check"></i><b>6</b> Resultados</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="res.html"><a href="res.html#redes-neuronales"><i class="fa fa-check"></i><b>6.1</b> Redes Neuronales</a></li>
+<li class="chapter" data-level="6.2" data-path="res.html"><a href="res.html#máquinas-de-soporte-vectorial"><i class="fa fa-check"></i><b>6.2</b> Máquinas de soporte vectorial</a></li>
+<li class="chapter" data-level="6.3" data-path="res.html"><a href="res.html#árboles-de-decisión"><i class="fa fa-check"></i><b>6.3</b> Árboles de decisión</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>7</b> Conclusiones</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Trabajo final de curso</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ana" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Estadísitca descriptiva e inferencia estadística<a href="ana.html#ana" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Vamos a realizar ahora un análisis más en profundidad de nuestro dataset, empezando por un análisis univariante, seguido del análisis multivariante. Con el análisis univariante pretendemos estudiar las variables de forma individual para ver si tenemos que modificarlas de alguna manera de cara a facilitar la construcción de los futuros modelos. Luego en el análisis bivariante vamos a estudiar la relación de cada variable con la variable de estudio. Finalmente en el análisis multivariante vamos a utilizar la función <code>StepAIC</code> para encontrar aquellas combinaciones que a priori funcionan mejor para explicar la variable de estudio.</p>
+<div id="análisis-univariante" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Análisis univariante<a href="ana.html#análisis-univariante" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Hemos representado en la tabla <a href="ana.html#tab:tab1">4.1</a> las variables numéricas, donde se muestra el mínimo, la mediana, la media y el máximo de cada variable, y en otra tabla <a href="ana.html#tab:tab2">4.2</a> las variables categóricas, para ir entendiendo un poco más la distribución de los datos.</p>
+<table>
+<caption><span id="tab:tab1">Table 4.1: </span>Resumen de las variables numéricas</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Min.</th>
+<th align="right">Median</th>
+<th align="right">Mean</th>
+<th align="right">Max.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">age</td>
+<td align="right">40.0</td>
+<td align="right">60.0</td>
+<td align="right">60.83389</td>
+<td align="right">95.0</td>
+</tr>
+<tr class="even">
+<td align="left">creatinine_phosphokinase</td>
+<td align="right">23.0</td>
+<td align="right">250.0</td>
+<td align="right">581.83946</td>
+<td align="right">7861.0</td>
+</tr>
+<tr class="odd">
+<td align="left">ejection_fraction</td>
+<td align="right">14.0</td>
+<td align="right">38.0</td>
+<td align="right">38.08361</td>
+<td align="right">80.0</td>
+</tr>
+<tr class="even">
+<td align="left">platelets</td>
+<td align="right">25.1</td>
+<td align="right">262.0</td>
+<td align="right">263.35803</td>
+<td align="right">850.0</td>
+</tr>
+<tr class="odd">
+<td align="left">serum_creatinine</td>
+<td align="right">0.5</td>
+<td align="right">1.1</td>
+<td align="right">1.39388</td>
+<td align="right">9.4</td>
+</tr>
+<tr class="even">
+<td align="left">serum_sodium</td>
+<td align="right">113.0</td>
+<td align="right">137.0</td>
+<td align="right">136.62542</td>
+<td align="right">148.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:tab2">Table 4.2: </span>Resumen de las variables categóricas</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">0</th>
+<th align="right">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">anaemia</td>
+<td align="right">170</td>
+<td align="right">129</td>
+</tr>
+<tr class="even">
+<td align="left">high_blood_pressure</td>
+<td align="right">194</td>
+<td align="right">105</td>
+</tr>
+<tr class="odd">
+<td align="left">diabetes</td>
+<td align="right">174</td>
+<td align="right">125</td>
+</tr>
+<tr class="even">
+<td align="left">sex</td>
+<td align="right">105</td>
+<td align="right">194</td>
+</tr>
+<tr class="odd">
+<td align="left">smoking</td>
+<td align="right">203</td>
+<td align="right">96</td>
+</tr>
+<tr class="even">
+<td align="left">DEATH_EVENT</td>
+<td align="right">203</td>
+<td align="right">96</td>
+</tr>
+</tbody>
+</table>
+<p>Las variables binarias están balanceadas y no van a suponer ningún problema a la hora de dividir el dataset en datos de entrenamiento, validación y test. No podemos decir lo mismo de las variables numéricas, concretamente <code>CPK</code> y <code>platelets</code>, las cuales vamos a representar en un gráfico para ver si podemos agruparlas.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-6-1.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<p>Efectivamente parece una buena idea categorizar ambas variables, ya que presentan una distribución muy dispersa.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="ana.html#cb6-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>creatinine_phosphokinase <span class="ot">&lt;-</span> <span class="fu">cut</span>(datos<span class="sc">$</span>creatinine_phosphokinase, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1000</span>,<span class="dv">2000</span>, <span class="fu">max</span>(datos<span class="sc">$</span>creatinine_phosphokinase)))</span>
+<span id="cb6-2"><a href="ana.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos<span class="sc">$</span>creatinine_phosphokinase)</span></code></pre></div>
+<pre><code>##        (0,1e+03]    (1e+03,2e+03] (2e+03,7.86e+03] 
+##              263               18               18</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="ana.html#cb8-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>platelets <span class="ot">&lt;-</span> <span class="fu">cut</span>(datos<span class="sc">$</span>platelets, <span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>,<span class="dv">400</span>, <span class="fu">max</span>(datos<span class="sc">$</span>platelets)))</span>
+<span id="cb8-2"><a href="ana.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos<span class="sc">$</span>platelets)</span></code></pre></div>
+<pre><code>##   (0,200] (200,400] (400,850] 
+##        63       216        20</code></pre>
+<p>Así hemos conseguido agrupar en tres grupos este par de variables evitando normalizar los datos; habiendo tan pocas muestras y teniendo en cuenta la gran dispersión de los datos es una alternativa que nos va a ayudar con los clasificadores.</p>
+<p>Ahora vamos a estudiar la distribución de las variables numéricas.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-1.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-2.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-3.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-9-4.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="ana.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(datos<span class="sc">$</span>age)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  datos$age
+## W = 0.97547, p-value = 5.35e-05</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="ana.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(datos<span class="sc">$</span>serum_creatinine)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  datos$serum_creatinine
+## W = 0.55147, p-value &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="ana.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(datos<span class="sc">$</span>serum_sodium)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  datos$serum_sodium
+## W = 0.93903, p-value = 9.215e-10</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="ana.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(datos<span class="sc">$</span>ejection_fraction)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  datos$ejection_fraction
+## W = 0.94732, p-value = 7.216e-09</code></pre>
+<p>El <em>p-valor</em> nos sale 0 en todas y por tanto no hay distribución normal de los datos, usaremos pues el test de <code>Wilcoxon</code> para compararlas con la variable de estudio.</p>
+</div>
+<div id="análisis-bivariante" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Análisis bivariante<a href="ana.html#análisis-bivariante" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ahora analizaremos cada variable con la variable de estudio. Empezamos con las numéricas.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-11-1.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-11-2.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-11-3.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-11-4.png" width="672" /></p>
+<p>A priori parece haber relación entre las variables numéricas y la variable de estudio.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="ana.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(datos<span class="sc">$</span>age <span class="sc">~</span> datos<span class="sc">$</span>DEATH_EVENT, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  datos$age by datos$DEATH_EVENT
+## W = 7121, p-value = 0.0001668
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="ana.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(datos<span class="sc">$</span>serum_creatinine <span class="sc">~</span> datos<span class="sc">$</span>DEATH_EVENT, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  datos$serum_creatinine by datos$DEATH_EVENT
+## W = 5298, p-value = 1.581e-10
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="ana.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(datos<span class="sc">$</span>serum_sodium <span class="sc">~</span> datos<span class="sc">$</span>DEATH_EVENT, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  datos$serum_sodium by datos$DEATH_EVENT
+## W = 12262, p-value = 0.0002928
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="ana.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(datos<span class="sc">$</span>ejection_fraction <span class="sc">~</span> datos<span class="sc">$</span>DEATH_EVENT, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test with continuity correction
+## 
+## data:  datos$ejection_fraction by datos$DEATH_EVENT
+## W = 13176, p-value = 7.368e-07
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<p>Confirmamos que las variables están relacionadas con el evento <code>DEATH</code> ya que el <em>p-valor</em> nos ha salido 0 (rechazamos la hipótesis nula, que dice que las medias son iguales).
+Ahora veamos las variables categóricas.</p>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-1.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-2.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-3.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-4.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-5.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-6.png" width="672" /><img src="bookdown-demo_files/figure-html/unnamed-chunk-13-7.png" width="672" /></p>
+<p>A simple vista parece que no hay relación alguna entre las variables categóricas y la variable de estudio, sin embargo vamos a comprobarlo haciendo el test <code>chisq.test</code>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="ana.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">xtabs</span>(<span class="sc">~</span> datos<span class="sc">$</span>anaemia <span class="sc">+</span> datos<span class="sc">$</span>DEATH_EVENT))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  xtabs(~datos$anaemia + datos$DEATH_EVENT)
+## X-squared = 1.0422, df = 1, p-value = 0.3073</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="ana.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">xtabs</span>(<span class="sc">~</span> datos<span class="sc">$</span>high_blood_pressure <span class="sc">+</span> datos<span class="sc">$</span>DEATH_EVENT))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  xtabs(~datos$high_blood_pressure + datos$DEATH_EVENT)
+## X-squared = 1.5435, df = 1, p-value = 0.2141</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="ana.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">xtabs</span>(<span class="sc">~</span> datos<span class="sc">$</span>creatinine_phosphokinase <span class="sc">+</span> datos<span class="sc">$</span>DEATH_EVENT))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  xtabs(~datos$creatinine_phosphokinase + datos$DEATH_EVENT)
+## X-squared = 2.3908, df = 2, p-value = 0.3026</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="ana.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">xtabs</span>(<span class="sc">~</span> datos<span class="sc">$</span>platelets <span class="sc">+</span> datos<span class="sc">$</span>DEATH_EVENT))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  xtabs(~datos$platelets + datos$DEATH_EVENT)
+## X-squared = 3.0754, df = 2, p-value = 0.2149</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="ana.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">xtabs</span>(<span class="sc">~</span> datos<span class="sc">$</span>diabetes <span class="sc">+</span> datos<span class="sc">$</span>DEATH_EVENT))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  xtabs(~datos$diabetes + datos$DEATH_EVENT)
+## X-squared = 2.1617e-30, df = 1, p-value = 1</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="ana.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">xtabs</span>(<span class="sc">~</span> datos<span class="sc">$</span>sex <span class="sc">+</span> datos<span class="sc">$</span>DEATH_EVENT))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  xtabs(~datos$sex + datos$DEATH_EVENT)
+## X-squared = 0, df = 1, p-value = 1</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="ana.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">xtabs</span>(<span class="sc">~</span> datos<span class="sc">$</span>smoking <span class="sc">+</span> datos<span class="sc">$</span>DEATH_EVENT))</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  xtabs(~datos$smoking + datos$DEATH_EVENT)
+## X-squared = 0.0073315, df = 1, p-value = 0.9318</code></pre>
+<p>Y como sospechábamos para todos el <em>p-valor</em> es mayor de 0.05 y por tanto las variables no están relacionadas.</p>
+</div>
+<div id="análisis-multivariante" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Análisis multivariante<a href="ana.html#análisis-multivariante" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Más adelante realizaremos la selección de variables de forma más adecuada pero mientras tanto mostramos el resultado del <code>StepAIC</code> utilizando todos los datos.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="ana.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelo de regresión logística</span></span>
+<span id="cb40-2"><a href="ana.html#cb40-2" aria-hidden="true" tabindex="-1"></a>lr <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(<span class="fu">glm</span>(DEATH_EVENT<span class="sc">~</span>., <span class="at">data =</span> datos, <span class="at">family =</span> <span class="fu">binomial</span>(<span class="st">&quot;logit&quot;</span>)), <span class="at">direction =</span> <span class="st">&quot;both&quot;</span>, <span class="at">trace =</span> <span class="dv">0</span>)</span>
+<span id="cb40-3"><a href="ana.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lr)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = DEATH_EVENT ~ age + ejection_fraction + high_blood_pressure + 
+##     serum_creatinine + serum_sodium, family = binomial(&quot;logit&quot;), 
+##     data = datos)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -2.3376  -0.7712  -0.4978   0.8484   2.4941  
+## 
+## Coefficients:
+##                      Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)           3.95483    4.43338   0.892    0.372    
+## age                   0.05105    0.01249   4.086 4.38e-05 ***
+## ejection_fraction    -0.06705    0.01440  -4.657 3.21e-06 ***
+## high_blood_pressure1  0.44276    0.29566   1.498    0.134    
+## serum_creatinine      0.65503    0.16421   3.989 6.64e-05 ***
+## serum_sodium         -0.04774    0.03226  -1.480    0.139    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 375.35  on 298  degrees of freedom
+## Residual deviance: 300.85  on 293  degrees of freedom
+## AIC: 312.85
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dataset.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kfold.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-análisis.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

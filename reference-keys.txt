@@ -2,13 +2,15 @@ tab:data1
 tab:data2
 tab:tab1
 tab:tab2
-tab:unnamed-chunk-22
+tab:red0
+fig:plot1
+fig:plot2
 tab:red
 tab:red2
 tab:red3
+tab:unnamed-chunk-21
 tab:unnamed-chunk-23
 tab:unnamed-chunk-25
-tab:unnamed-chunk-27
 introducción
 methods
 dataset
@@ -19,7 +21,7 @@ análisis-multivariante
 kfold
 k-fold-cross-validation
 métricas
-resultados
+res
 redes-neuronales
 máquinas-de-soporte-vectorial
 árboles-de-decisión

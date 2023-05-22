@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 6 Resultados | Trabajo final de curso</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 6 Resultados | Trabajo final de curso" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 6 Resultados | Trabajo final de curso" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Víctor Guirado Osorio" />
+
+
+<meta name="date" content="2023-05-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="kfold.html"/>
+<link rel="next" href="conclusiones.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Trabajo fin de curso</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>2</b> Metodología</a></li>
+<li class="chapter" data-level="3" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>3</b> Dataset</a></li>
+<li class="chapter" data-level="4" data-path="ana.html"><a href="ana.html"><i class="fa fa-check"></i><b>4</b> Estadísitca descriptiva e inferencia estadística</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ana.html"><a href="ana.html#análisis-univariante"><i class="fa fa-check"></i><b>4.1</b> Análisis univariante</a></li>
+<li class="chapter" data-level="4.2" data-path="ana.html"><a href="ana.html#análisis-bivariante"><i class="fa fa-check"></i><b>4.2</b> Análisis bivariante</a></li>
+<li class="chapter" data-level="4.3" data-path="ana.html"><a href="ana.html#análisis-multivariante"><i class="fa fa-check"></i><b>4.3</b> Análisis multivariante</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="kfold.html"><a href="kfold.html"><i class="fa fa-check"></i><b>5</b> Validación y evaluación</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="kfold.html"><a href="kfold.html#k-fold-cross-validation"><i class="fa fa-check"></i><b>5.1</b> K-fold cross validation</a></li>
+<li class="chapter" data-level="5.2" data-path="kfold.html"><a href="kfold.html#métricas"><i class="fa fa-check"></i><b>5.2</b> Métricas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="res.html"><a href="res.html"><i class="fa fa-check"></i><b>6</b> Resultados</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="res.html"><a href="res.html#redes-neuronales"><i class="fa fa-check"></i><b>6.1</b> Redes Neuronales</a></li>
+<li class="chapter" data-level="6.2" data-path="res.html"><a href="res.html#máquinas-de-soporte-vectorial"><i class="fa fa-check"></i><b>6.2</b> Máquinas de soporte vectorial</a></li>
+<li class="chapter" data-level="6.3" data-path="res.html"><a href="res.html#árboles-de-decisión"><i class="fa fa-check"></i><b>6.3</b> Árboles de decisión</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>7</b> Conclusiones</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Trabajo final de curso</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="res" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> Resultados<a href="res.html#res" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A continuación vamos a mostrar los resultados de los mejores modelos obtenidos de redes neuronales, máquinas de soporte vectorial y árboles de decisión. Para cada uno se ha empleado el método de filtrado <code>chi.squared</code> y el método wrapper <code>stepAIC</code>. Se muestran los valores de precisión, f1-score, y auc. Es importante destacar que las dos primeras medidas están completamente condicionadas por el umbral escogido para determinar qué probabilidades consideremos como 0 o 1. Nosotros hemos usado la función <code>coords</code> del paquete <code>pROC</code> para obtener ese <em>cut-off</em>.</p>
+<p>Lo dejamos así por si en un futuro conseguimos arreglar el problema no tener que modificar las tablas.</p>
+<table>
+<caption><span id="tab:red0">Table 6.1: </span>Métricas de los algoritmos para k=10</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">ACC</th>
+<th align="right">F1score</th>
+<th align="right">Min. AUC</th>
+<th align="right">Mean AUC</th>
+<th align="right">Max. AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">NN wrapper</td>
+<td align="right">0.7716500</td>
+<td align="right">0.7853928</td>
+<td align="right">0.6444444</td>
+<td align="right">0.7858651</td>
+<td align="right">0.8900000</td>
+</tr>
+<tr class="even">
+<td align="left">NN filtrado</td>
+<td align="right">0.7733370</td>
+<td align="right">0.8274347</td>
+<td align="right">0.6750000</td>
+<td align="right">0.7900476</td>
+<td align="right">0.9388889</td>
+</tr>
+<tr class="odd">
+<td align="left">SVM wrapper</td>
+<td align="right">0.7760882</td>
+<td align="right">0.8691756</td>
+<td align="right">0.6809524</td>
+<td align="right">0.7938598</td>
+<td align="right">0.8944444</td>
+</tr>
+<tr class="even">
+<td align="left">SVM filtrado</td>
+<td align="right">0.7928773</td>
+<td align="right">0.8274362</td>
+<td align="right">0.6761905</td>
+<td align="right">0.7969259</td>
+<td align="right">0.9400000</td>
+</tr>
+<tr class="odd">
+<td align="left">DT wrapper</td>
+<td align="right">0.7560363</td>
+<td align="right">0.6009772</td>
+<td align="right">0.5500000</td>
+<td align="right">0.6926190</td>
+<td align="right">0.8023810</td>
+</tr>
+<tr class="even">
+<td align="left">DT filtrado</td>
+<td align="right">0.7263107</td>
+<td align="right">0.6002322</td>
+<td align="right">0.5000000</td>
+<td align="right">0.6684127</td>
+<td align="right">0.7833333</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos observar que el mayor <code>AUC</code> medio y el mayor <code>ACC</code> medio se han obtenido con <em>SVM</em> usando un método de filtrado para la selección de variables. Todos los modelos han obtenido resultados muy similares, y atendiendo al <strong>AUC</strong> máximo, se consiguen valores muy buenos.
+El conjunto de variables correspondiente para ese modelo es el siguiente:
+<code>serum_creatinine</code>, <code>ejection_fraction</code>, <code>age</code>, <code>serum_sodium</code> y <code>platelets</code>. Corresponde a lo visto en el análisis bivariante, donde nuestras cuatro variables numéricas estaban relacionadas con el evento <code>Death</code>. Vimos que <code>platelets</code> no estaba relacionada pero para el conjunto de datos parece que incluirla junto al resto de variables ayuda con la predicción. Para más detalles de los resultados obtenidos en la tabla <a href="res.html#tab:red0">6.1</a> ver las siguientes subsecciones.</p>
+<p>Para ver un poco mejor la dispersión de los resultados ver las figuras <a href="res.html#fig:plot1">6.1</a> y <a href="res.html#fig:plot2">6.2</a>. Puede observarse que la diferencia de modelos en el <code>AUC</code> es más significativa que en <code>ACC</code> y vemos claramente que el modelo más robusto que consigue con máquinas de soporte vectorial, más consistente y medias más altas.</p>
+<div class="figure"><span style="display:block;" id="fig:plot1"></span>
+<img src="bookdown-demo_files/figure-html/plot1-1.png" alt="Precisión de los modelos" width="672" />
+<p class="caption">
+Figure 6.1: Precisión de los modelos
+</p>
+</div>
+<div class="figure"><span style="display:block;" id="fig:plot2"></span>
+<img src="bookdown-demo_files/figure-html/plot2-1.png" alt="AUC de los modelos" width="672" />
+<p class="caption">
+Figure 6.2: AUC de los modelos
+</p>
+</div>
+<p>Ahora vamos a comprobar si obtenemos mejores resultados usando sólo las variables <code>serum_creatinine</code> y <code>ejection_fraction</code> como mencionamos al principio del trabajo, cuyos resultados podemos ver en la tabla <a href="res.html#tab:red">6.2</a>. También vamos a ver los resultados utilizando únicamente las variables relacionadas obtenidas en el capítulo <a href="ana.html#ana">4</a> (ver tabla <a href="res.html#tab:red2">6.3</a>).</p>
+<table>
+<caption><span id="tab:red">Table 6.2: </span>Métricas de los algoritmos (dos variables) para k=10</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">ACC</th>
+<th align="right">F1-score</th>
+<th align="right">Min. AUC</th>
+<th align="right">Mean AUC</th>
+<th align="right">Max. AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">NN wrapper</td>
+<td align="right">0.8157805</td>
+<td align="right">0.7498166</td>
+<td align="right">0.5700000</td>
+<td align="right">0.7682209</td>
+<td align="right">0.9404762</td>
+</tr>
+<tr class="even">
+<td align="left">NN filtrado</td>
+<td align="right">0.7857100</td>
+<td align="right">0.7373077</td>
+<td align="right">0.6225000</td>
+<td align="right">0.7734511</td>
+<td align="right">0.8875000</td>
+</tr>
+<tr class="odd">
+<td align="left">SVM wrapper</td>
+<td align="right">0.7827697</td>
+<td align="right">0.7831239</td>
+<td align="right">0.6523810</td>
+<td align="right">0.7685476</td>
+<td align="right">0.9142857</td>
+</tr>
+<tr class="even">
+<td align="left">SVM filtrado</td>
+<td align="right">0.7993363</td>
+<td align="right">0.7924813</td>
+<td align="right">0.5875000</td>
+<td align="right">0.7683730</td>
+<td align="right">0.9111111</td>
+</tr>
+<tr class="odd">
+<td align="left">DT wrapper</td>
+<td align="right">0.7655951</td>
+<td align="right">0.6049186</td>
+<td align="right">0.6190476</td>
+<td align="right">0.6998810</td>
+<td align="right">0.8023810</td>
+</tr>
+<tr class="even">
+<td align="left">DT filtrado</td>
+<td align="right">0.7490323</td>
+<td align="right">0.5832521</td>
+<td align="right">0.5071429</td>
+<td align="right">0.6834524</td>
+<td align="right">0.8694444</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:red2">Table 6.3: </span>Métricas de los algoritmos (cuatro variables) para k=10</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">ACC</th>
+<th align="right">F1-score</th>
+<th align="right">Min. AUC</th>
+<th align="right">Mean AUC</th>
+<th align="right">Max. AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">NN wrapper</td>
+<td align="right">0.7563107</td>
+<td align="right">0.8054173</td>
+<td align="right">0.6900000</td>
+<td align="right">0.7864259</td>
+<td align="right">0.8777778</td>
+</tr>
+<tr class="even">
+<td align="left">NN filtrado</td>
+<td align="right">0.7772006</td>
+<td align="right">0.7611653</td>
+<td align="right">0.6349206</td>
+<td align="right">0.7668016</td>
+<td align="right">0.8950000</td>
+</tr>
+<tr class="odd">
+<td align="left">SVM wrapper</td>
+<td align="right">0.7765554</td>
+<td align="right">0.8737590</td>
+<td align="right">0.6250000</td>
+<td align="right">0.7947857</td>
+<td align="right">0.8714286</td>
+</tr>
+<tr class="even">
+<td align="left">SVM filtrado</td>
+<td align="right">0.7700371</td>
+<td align="right">0.8414964</td>
+<td align="right">0.5950000</td>
+<td align="right">0.7880159</td>
+<td align="right">0.9600000</td>
+</tr>
+<tr class="odd">
+<td align="left">DT wrapper</td>
+<td align="right">0.7363107</td>
+<td align="right">0.6167726</td>
+<td align="right">0.6000000</td>
+<td align="right">0.6830952</td>
+<td align="right">0.7833333</td>
+</tr>
+<tr class="even">
+<td align="left">DT filtrado</td>
+<td align="right">0.7500371</td>
+<td align="right">0.6277486</td>
+<td align="right">0.5500000</td>
+<td align="right">0.6983333</td>
+<td align="right">0.8333333</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos juntar todos los datos obtenidos en las tres pruebas, calculando la media de cada columna, y obtenemos la siguiente tabla:</p>
+<table style="width:100%;">
+<caption><span id="tab:red3">Table 6.4: </span>Media de todos los algoritmos según un conjunto de variables para k=10</caption>
+<colgroup>
+<col width="58%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">ACC</th>
+<th align="right">F1-score</th>
+<th align="right">Min. AUC</th>
+<th align="right">Mean AUC</th>
+<th align="right">Max. AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7660499</td>
+<td align="right">0.7517748</td>
+<td align="right">0.6210979</td>
+<td align="right">0.7546217</td>
+<td align="right">0.8748413</td>
+</tr>
+<tr class="even">
+<td align="left">serum_creatinine + ejection_fraction + age + serum_sodium</td>
+<td align="right">0.7610753</td>
+<td align="right">0.7543932</td>
+<td align="right">0.6158201</td>
+<td align="right">0.7529096</td>
+<td align="right">0.8701455</td>
+</tr>
+<tr class="odd">
+<td align="left">serum_creatinine + ejection_fraction</td>
+<td align="right">0.7830373</td>
+<td align="right">0.7084834</td>
+<td align="right">0.5930952</td>
+<td align="right">0.7436543</td>
+<td align="right">0.8875331</td>
+</tr>
+</tbody>
+</table>
+<p>Los mejores resultados en precisión se han obtenido usando sólo dos variables. Vemos que no hay mucha diferencia entre usar un conjunto de variables u otro, y preferiblemente vamos a tender siempre a simplificar el modelo. Siendo la diferencia en <code>AUC</code> tan poco significativa y siendo el conjunto de dos variables el que más <code>ACC</code> obtiene de media, nos decantamos por usarlo como conjunto para el modelo.</p>
+<div id="redes-neuronales" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Redes Neuronales<a href="res.html#redes-neuronales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<caption><span id="tab:unnamed-chunk-21">Table 6.5: </span>Resultados NN usando wrapper</caption>
+<colgroup>
+<col width="80%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variables</th>
+<th align="right">ACC</th>
+<th align="right">F1-score</th>
+<th align="right">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8065</td>
+<td align="right">0.7495</td>
+<td align="right">0.7333</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7241</td>
+<td align="right">0.7981</td>
+<td align="right">0.8333</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8710</td>
+<td align="right">0.8340</td>
+<td align="right">0.8714</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7931</td>
+<td align="right">0.7854</td>
+<td align="right">0.7722</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8667</td>
+<td align="right">0.8198</td>
+<td align="right">0.8889</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8667</td>
+<td align="right">0.8320</td>
+<td align="right">0.8900</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.6667</td>
+<td align="right">0.8000</td>
+<td align="right">0.7100</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8000</td>
+<td align="right">0.8471</td>
+<td align="right">0.8150</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.6667</td>
+<td align="right">0.7273</td>
+<td align="right">0.7000</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.6552</td>
+<td align="right">0.6609</td>
+<td align="right">0.6444</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-21">Table 6.5: </span>Resultados NN usando filtrado</caption>
+<colgroup>
+<col width="78%" />
+<col width="6%" />
+<col width="8%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variables</th>
+<th align="right">ACC</th>
+<th align="right">F1-score</th>
+<th align="right">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.8667</td>
+<td align="right">0.8830</td>
+<td align="right">0.8850</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.8276</td>
+<td align="right">0.9057</td>
+<td align="right">0.8889</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7000</td>
+<td align="right">0.7832</td>
+<td align="right">0.7302</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7931</td>
+<td align="right">0.7854</td>
+<td align="right">0.7111</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.6774</td>
+<td align="right">0.8077</td>
+<td align="right">0.6905</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7333</td>
+<td align="right">0.8082</td>
+<td align="right">0.7250</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7000</td>
+<td align="right">0.7000</td>
+<td align="right">0.6750</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7000</td>
+<td align="right">0.7875</td>
+<td align="right">0.7750</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.8387</td>
+<td align="right">0.8683</td>
+<td align="right">0.8810</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.8966</td>
+<td align="right">0.9455</td>
+<td align="right">0.9389</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="res.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(nn.wrapper.results<span class="sc">$</span>AUC)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.6444  0.7158  0.7936  0.7859  0.8619  0.8900</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="res.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(nn.filtrado.results<span class="sc">$</span>AUC)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.6750  0.7146  0.7526  0.7900  0.8840  0.9389</code></pre>
+</div>
+<div id="máquinas-de-soporte-vectorial" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Máquinas de soporte vectorial<a href="res.html#máquinas-de-soporte-vectorial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<caption><span id="tab:unnamed-chunk-23">Table 6.6: </span>Resultados SVM usando wrapper</caption>
+<colgroup>
+<col width="80%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variables</th>
+<th align="right">ACC</th>
+<th align="right">F1-score</th>
+<th align="right">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8000</td>
+<td align="right">1.0000</td>
+<td align="right">0.8300</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8276</td>
+<td align="right">1.0000</td>
+<td align="right">0.8944</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7931</td>
+<td align="right">0.7447</td>
+<td align="right">0.7944</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.6129</td>
+<td align="right">0.8411</td>
+<td align="right">0.6810</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7000</td>
+<td align="right">1.0000</td>
+<td align="right">0.8042</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8710</td>
+<td align="right">0.8431</td>
+<td align="right">0.8429</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8000</td>
+<td align="right">0.7333</td>
+<td align="right">0.6850</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.6897</td>
+<td align="right">0.8364</td>
+<td align="right">0.7167</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8333</td>
+<td align="right">0.8182</td>
+<td align="right">0.8750</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8333</td>
+<td align="right">0.8750</td>
+<td align="right">0.8150</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-23">Table 6.6: </span>Resultados SVM usando filtrado</caption>
+<colgroup>
+<col width="78%" />
+<col width="6%" />
+<col width="8%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variables</th>
+<th align="right">ACC</th>
+<th align="right">F1-score</th>
+<th align="right">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.6897</td>
+<td align="right">0.8364</td>
+<td align="right">0.7222</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7333</td>
+<td align="right">0.7176</td>
+<td align="right">0.6850</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.9333</td>
+<td align="right">1.0000</td>
+<td align="right">0.9400</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.8333</td>
+<td align="right">0.8095</td>
+<td align="right">0.8783</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.8333</td>
+<td align="right">0.8750</td>
+<td align="right">0.8200</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7000</td>
+<td align="right">0.7600</td>
+<td align="right">0.7150</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.8966</td>
+<td align="right">0.8588</td>
+<td align="right">0.8833</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7931</td>
+<td align="right">0.7857</td>
+<td align="right">0.8111</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7097</td>
+<td align="right">0.7632</td>
+<td align="right">0.6762</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.8065</td>
+<td align="right">0.8681</td>
+<td align="right">0.8381</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="res.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(svm.wrapper.results<span class="sc">$</span>AUC)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.6810  0.7361  0.8096  0.7939  0.8396  0.8944</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="res.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(svm.filtrado.results<span class="sc">$</span>AUC)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.6762  0.7168  0.8156  0.7969  0.8683  0.9400</code></pre>
+</div>
+<div id="árboles-de-decisión" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Árboles de decisión<a href="res.html#árboles-de-decisión" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<caption><span id="tab:unnamed-chunk-25">Table 6.7: </span>Resultados DT usando wrapper</caption>
+<colgroup>
+<col width="80%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variables</th>
+<th align="right">ACC</th>
+<th align="right">F1-score</th>
+<th align="right">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8387</td>
+<td align="right">0.7631</td>
+<td align="right">0.8024</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7931</td>
+<td align="right">0.6534</td>
+<td align="right">0.7278</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7333</td>
+<td align="right">0.5946</td>
+<td align="right">0.6750</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7097</td>
+<td align="right">0.5867</td>
+<td align="right">0.6548</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7586</td>
+<td align="right">0.7097</td>
+<td align="right">0.7333</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7097</td>
+<td align="right">0.4217</td>
+<td align="right">0.6024</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.8333</td>
+<td align="right">0.6977</td>
+<td align="right">0.7750</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7241</td>
+<td align="right">0.5508</td>
+<td align="right">0.6472</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.6667</td>
+<td align="right">0.3077</td>
+<td align="right">0.5500</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, age + ejection_fraction + high_blood_pressure + serum_creatinine + serum_sodium</td>
+<td align="right">0.7931</td>
+<td align="right">0.7244</td>
+<td align="right">0.7583</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:unnamed-chunk-25">Table 6.7: </span>Resultados DT usando filtrado</caption>
+<colgroup>
+<col width="78%" />
+<col width="6%" />
+<col width="8%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variables</th>
+<th align="right">ACC</th>
+<th align="right">F1-score</th>
+<th align="right">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.6333</td>
+<td align="right">0.3040</td>
+<td align="right">0.5250</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7667</td>
+<td align="right">0.7830</td>
+<td align="right">0.7750</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.6000</td>
+<td align="right">0.5455</td>
+<td align="right">0.5000</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.8276</td>
+<td align="right">0.7385</td>
+<td align="right">0.7833</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7667</td>
+<td align="right">0.6732</td>
+<td align="right">0.7250</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7419</td>
+<td align="right">0.5974</td>
+<td align="right">0.6786</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7241</td>
+<td align="right">0.7500</td>
+<td align="right">0.7389</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7097</td>
+<td align="right">0.4217</td>
+<td align="right">0.6024</td>
+</tr>
+<tr class="odd">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7931</td>
+<td align="right">0.5697</td>
+<td align="right">0.6972</td>
+</tr>
+<tr class="even">
+<td align="left">~, DEATH_EVENT, serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
+<td align="right">0.7000</td>
+<td align="right">0.6195</td>
+<td align="right">0.6587</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="res.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dt.wrapper.results<span class="sc">$</span>AUC)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.5500  0.6491  0.7014  0.6926  0.7521  0.8024</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="res.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dt.filtrado.results<span class="sc">$</span>AUC)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##  0.5000  0.6165  0.6879  0.6684  0.7354  0.7833</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="kfold.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusiones.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-results.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
