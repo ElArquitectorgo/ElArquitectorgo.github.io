@@ -218,58 +218,58 @@ div.csl-indent {
 <tbody>
 <tr class="odd">
 <td align="left">NN wrapper</td>
-<td align="right">0.7716500</td>
-<td align="right">0.7853928</td>
-<td align="right">0.6444444</td>
-<td align="right">0.7858651</td>
-<td align="right">0.8900000</td>
+<td align="right">0.7716</td>
+<td align="right">0.7854</td>
+<td align="right">0.6444</td>
+<td align="right">0.7859</td>
+<td align="right">0.8900</td>
 </tr>
 <tr class="even">
 <td align="left">NN filtrado</td>
-<td align="right">0.7733370</td>
-<td align="right">0.8274347</td>
-<td align="right">0.6750000</td>
-<td align="right">0.7900476</td>
-<td align="right">0.9388889</td>
+<td align="right">0.7733</td>
+<td align="right">0.8274</td>
+<td align="right">0.6750</td>
+<td align="right">0.7900</td>
+<td align="right">0.9389</td>
 </tr>
 <tr class="odd">
 <td align="left">SVM wrapper</td>
-<td align="right">0.7760882</td>
-<td align="right">0.8691756</td>
-<td align="right">0.6809524</td>
-<td align="right">0.7938598</td>
-<td align="right">0.8944444</td>
+<td align="right">0.7761</td>
+<td align="right">0.8692</td>
+<td align="right">0.6810</td>
+<td align="right">0.7939</td>
+<td align="right">0.8944</td>
 </tr>
 <tr class="even">
 <td align="left">SVM filtrado</td>
-<td align="right">0.7928773</td>
-<td align="right">0.8274362</td>
-<td align="right">0.6761905</td>
-<td align="right">0.7969259</td>
-<td align="right">0.9400000</td>
+<td align="right">0.7929</td>
+<td align="right">0.8274</td>
+<td align="right">0.6762</td>
+<td align="right">0.7969</td>
+<td align="right">0.9400</td>
 </tr>
 <tr class="odd">
 <td align="left">DT wrapper</td>
-<td align="right">0.7560363</td>
-<td align="right">0.6009772</td>
-<td align="right">0.5500000</td>
-<td align="right">0.6926190</td>
-<td align="right">0.8023810</td>
+<td align="right">0.7560</td>
+<td align="right">0.6010</td>
+<td align="right">0.5500</td>
+<td align="right">0.6926</td>
+<td align="right">0.8024</td>
 </tr>
 <tr class="even">
 <td align="left">DT filtrado</td>
-<td align="right">0.7263107</td>
-<td align="right">0.6002322</td>
-<td align="right">0.5000000</td>
-<td align="right">0.6684127</td>
-<td align="right">0.7833333</td>
+<td align="right">0.7263</td>
+<td align="right">0.6002</td>
+<td align="right">0.5000</td>
+<td align="right">0.6684</td>
+<td align="right">0.7833</td>
 </tr>
 </tbody>
 </table>
 <p>Podemos observar que el mayor <code>AUC</code> medio y el mayor <code>ACC</code> medio se han obtenido con <em>SVM</em> usando un método de filtrado para la selección de variables. Todos los modelos han obtenido resultados muy similares, y atendiendo al <strong>AUC</strong> máximo, se consiguen valores muy buenos.
 El conjunto de variables correspondiente para ese modelo es el siguiente:
 <code>serum_creatinine</code>, <code>ejection_fraction</code>, <code>age</code>, <code>serum_sodium</code> y <code>platelets</code>. Corresponde a lo visto en el análisis bivariante, donde nuestras cuatro variables numéricas estaban relacionadas con el evento <code>Death</code>. Vimos que <code>platelets</code> no estaba relacionada pero para el conjunto de datos parece que incluirla junto al resto de variables ayuda con la predicción. Para más detalles de los resultados obtenidos en la tabla <a href="res.html#tab:red0">6.1</a> ver las siguientes subsecciones.</p>
-<p>Para ver un poco mejor la dispersión de los resultados ver las figuras <a href="res.html#fig:plot1">6.1</a> y <a href="res.html#fig:plot2">6.2</a>. Puede observarse que la diferencia de modelos en el <code>AUC</code> es más significativa que en <code>ACC</code> y vemos claramente que el modelo más robusto que consigue con máquinas de soporte vectorial, más consistente y medias más altas.</p>
+<p>Para ver un poco mejor la dispersión de los resultados ver las figuras <a href="res.html#fig:plot1">6.1</a> y <a href="res.html#fig:plot2">6.2</a>. Puede observarse que la diferencia de modelos en el <code>AUC</code> es más significativa que en <code>ACC</code> y vemos claramente que el modelo más robusto se consigue con máquinas de soporte vectorial, es más consistente y tiene medias más altas.</p>
 <div class="figure"><span style="display:block;" id="fig:plot1"></span>
 <img src="bookdown-demo_files/figure-html/plot1-1.png" alt="Precisión de los modelos" width="672" />
 <p class="caption">
@@ -298,51 +298,51 @@ Figure 6.2: AUC de los modelos
 <tbody>
 <tr class="odd">
 <td align="left">NN wrapper</td>
-<td align="right">0.8157805</td>
-<td align="right">0.7498166</td>
-<td align="right">0.5700000</td>
-<td align="right">0.7682209</td>
-<td align="right">0.9404762</td>
+<td align="right">0.8158</td>
+<td align="right">0.7498</td>
+<td align="right">0.5700</td>
+<td align="right">0.7682</td>
+<td align="right">0.9405</td>
 </tr>
 <tr class="even">
 <td align="left">NN filtrado</td>
-<td align="right">0.7857100</td>
-<td align="right">0.7373077</td>
-<td align="right">0.6225000</td>
-<td align="right">0.7734511</td>
-<td align="right">0.8875000</td>
+<td align="right">0.7857</td>
+<td align="right">0.7373</td>
+<td align="right">0.6225</td>
+<td align="right">0.7735</td>
+<td align="right">0.8875</td>
 </tr>
 <tr class="odd">
 <td align="left">SVM wrapper</td>
-<td align="right">0.7827697</td>
-<td align="right">0.7831239</td>
-<td align="right">0.6523810</td>
-<td align="right">0.7685476</td>
-<td align="right">0.9142857</td>
+<td align="right">0.7828</td>
+<td align="right">0.7831</td>
+<td align="right">0.6524</td>
+<td align="right">0.7685</td>
+<td align="right">0.9143</td>
 </tr>
 <tr class="even">
 <td align="left">SVM filtrado</td>
-<td align="right">0.7993363</td>
-<td align="right">0.7924813</td>
-<td align="right">0.5875000</td>
-<td align="right">0.7683730</td>
-<td align="right">0.9111111</td>
+<td align="right">0.7993</td>
+<td align="right">0.7925</td>
+<td align="right">0.5875</td>
+<td align="right">0.7684</td>
+<td align="right">0.9111</td>
 </tr>
 <tr class="odd">
 <td align="left">DT wrapper</td>
-<td align="right">0.7655951</td>
-<td align="right">0.6049186</td>
-<td align="right">0.6190476</td>
-<td align="right">0.6998810</td>
-<td align="right">0.8023810</td>
+<td align="right">0.7656</td>
+<td align="right">0.6049</td>
+<td align="right">0.6190</td>
+<td align="right">0.6999</td>
+<td align="right">0.8024</td>
 </tr>
 <tr class="even">
 <td align="left">DT filtrado</td>
-<td align="right">0.7490323</td>
-<td align="right">0.5832521</td>
-<td align="right">0.5071429</td>
-<td align="right">0.6834524</td>
-<td align="right">0.8694444</td>
+<td align="right">0.7490</td>
+<td align="right">0.5833</td>
+<td align="right">0.5071</td>
+<td align="right">0.6835</td>
+<td align="right">0.8694</td>
 </tr>
 </tbody>
 </table>
@@ -361,64 +361,64 @@ Figure 6.2: AUC de los modelos
 <tbody>
 <tr class="odd">
 <td align="left">NN wrapper</td>
-<td align="right">0.7563107</td>
-<td align="right">0.8054173</td>
-<td align="right">0.6900000</td>
-<td align="right">0.7864259</td>
-<td align="right">0.8777778</td>
+<td align="right">0.7563</td>
+<td align="right">0.8054</td>
+<td align="right">0.6900</td>
+<td align="right">0.7864</td>
+<td align="right">0.8778</td>
 </tr>
 <tr class="even">
 <td align="left">NN filtrado</td>
-<td align="right">0.7772006</td>
-<td align="right">0.7611653</td>
-<td align="right">0.6349206</td>
-<td align="right">0.7668016</td>
-<td align="right">0.8950000</td>
+<td align="right">0.7772</td>
+<td align="right">0.7612</td>
+<td align="right">0.6349</td>
+<td align="right">0.7668</td>
+<td align="right">0.8950</td>
 </tr>
 <tr class="odd">
 <td align="left">SVM wrapper</td>
-<td align="right">0.7765554</td>
-<td align="right">0.8737590</td>
-<td align="right">0.6250000</td>
-<td align="right">0.7947857</td>
-<td align="right">0.8714286</td>
+<td align="right">0.7766</td>
+<td align="right">0.8738</td>
+<td align="right">0.6250</td>
+<td align="right">0.7948</td>
+<td align="right">0.8714</td>
 </tr>
 <tr class="even">
 <td align="left">SVM filtrado</td>
-<td align="right">0.7700371</td>
-<td align="right">0.8414964</td>
-<td align="right">0.5950000</td>
-<td align="right">0.7880159</td>
-<td align="right">0.9600000</td>
+<td align="right">0.7700</td>
+<td align="right">0.8415</td>
+<td align="right">0.5950</td>
+<td align="right">0.7880</td>
+<td align="right">0.9600</td>
 </tr>
 <tr class="odd">
 <td align="left">DT wrapper</td>
-<td align="right">0.7363107</td>
-<td align="right">0.6167726</td>
-<td align="right">0.6000000</td>
-<td align="right">0.6830952</td>
-<td align="right">0.7833333</td>
+<td align="right">0.7363</td>
+<td align="right">0.6168</td>
+<td align="right">0.6000</td>
+<td align="right">0.6831</td>
+<td align="right">0.7833</td>
 </tr>
 <tr class="even">
 <td align="left">DT filtrado</td>
-<td align="right">0.7500371</td>
-<td align="right">0.6277486</td>
-<td align="right">0.5500000</td>
-<td align="right">0.6983333</td>
-<td align="right">0.8333333</td>
+<td align="right">0.7500</td>
+<td align="right">0.6277</td>
+<td align="right">0.5500</td>
+<td align="right">0.6983</td>
+<td align="right">0.8333</td>
 </tr>
 </tbody>
 </table>
 <p>Podemos juntar todos los datos obtenidos en las tres pruebas, calculando la media de cada columna, y obtenemos la siguiente tabla:</p>
-<table style="width:100%;">
+<table>
 <caption><span id="tab:red3">Table 6.4: </span>Media de todos los algoritmos según un conjunto de variables para k=10</caption>
 <colgroup>
-<col width="58%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
-<col width="8%" />
+<col width="61%" />
+<col width="6%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -433,27 +433,27 @@ Figure 6.2: AUC de los modelos
 <tbody>
 <tr class="odd">
 <td align="left">serum_creatinine + ejection_fraction + age + serum_sodium + platelets</td>
-<td align="right">0.7660499</td>
-<td align="right">0.7517748</td>
-<td align="right">0.6210979</td>
-<td align="right">0.7546217</td>
-<td align="right">0.8748413</td>
+<td align="right">0.7660</td>
+<td align="right">0.7518</td>
+<td align="right">0.6211</td>
+<td align="right">0.7546</td>
+<td align="right">0.8748</td>
 </tr>
 <tr class="even">
 <td align="left">serum_creatinine + ejection_fraction + age + serum_sodium</td>
-<td align="right">0.7610753</td>
-<td align="right">0.7543932</td>
-<td align="right">0.6158201</td>
-<td align="right">0.7529096</td>
-<td align="right">0.8701455</td>
+<td align="right">0.7611</td>
+<td align="right">0.7544</td>
+<td align="right">0.6158</td>
+<td align="right">0.7529</td>
+<td align="right">0.8701</td>
 </tr>
 <tr class="odd">
 <td align="left">serum_creatinine + ejection_fraction</td>
-<td align="right">0.7830373</td>
-<td align="right">0.7084834</td>
-<td align="right">0.5930952</td>
-<td align="right">0.7436543</td>
-<td align="right">0.8875331</td>
+<td align="right">0.7830</td>
+<td align="right">0.7085</td>
+<td align="right">0.5931</td>
+<td align="right">0.7437</td>
+<td align="right">0.8875</td>
 </tr>
 </tbody>
 </table>
