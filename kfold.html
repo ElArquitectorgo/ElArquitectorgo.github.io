@@ -259,7 +259,7 @@ div.csl-indent {
 <span id="cb44-12"><a href="kfold.html#cb44-12" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb44-13"><a href="kfold.html#cb44-13" aria-hidden="true" tabindex="-1"></a>    second.folded.data <span class="ot">&lt;-</span> <span class="fu">createFolds</span>(training.set<span class="sc">$</span>DEATH_EVENT, k<span class="dv">-1</span>)</span>
 <span id="cb44-14"><a href="kfold.html#cb44-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb44-15"><a href="kfold.html#cb44-15" aria-hidden="true" tabindex="-1"></a>    variables <span class="ot">&lt;-</span> <span class="fu">get.variables</span>(method, datos)</span>
+<span id="cb44-15"><a href="kfold.html#cb44-15" aria-hidden="true" tabindex="-1"></a>    variables <span class="ot">&lt;-</span> <span class="fu">get.variables</span>(method, training.set)</span>
 <span id="cb44-16"><a href="kfold.html#cb44-16" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb44-17"><a href="kfold.html#cb44-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (m <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(parameters)) {</span>
 <span id="cb44-18"><a href="kfold.html#cb44-18" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Calculamos la media de aucs de un mismo conjunto de parámetros</span></span>
