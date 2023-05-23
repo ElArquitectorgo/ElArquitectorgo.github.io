@@ -23,7 +23,7 @@
 <meta name="author" content="Víctor Guirado Osorio" />
 
 
-<meta name="date" content="2023-05-22" />
+<meta name="date" content="2023-05-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -259,36 +259,35 @@ div.csl-indent {
 <span id="cb44-12"><a href="kfold.html#cb44-12" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb44-13"><a href="kfold.html#cb44-13" aria-hidden="true" tabindex="-1"></a>    second.folded.data <span class="ot">&lt;-</span> <span class="fu">createFolds</span>(training.set<span class="sc">$</span>DEATH_EVENT, k<span class="dv">-1</span>)</span>
 <span id="cb44-14"><a href="kfold.html#cb44-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb44-15"><a href="kfold.html#cb44-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">#variables &lt;- get.variables(method, datos)</span></span>
-<span id="cb44-16"><a href="kfold.html#cb44-16" aria-hidden="true" tabindex="-1"></a>    variables <span class="ot">&lt;-</span> (DEATH_EVENT<span class="sc">~</span>serum_creatinine<span class="sc">+</span>ejection_fraction<span class="sc">+</span>age<span class="sc">+</span>serum_sodium)</span>
-<span id="cb44-17"><a href="kfold.html#cb44-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb44-18"><a href="kfold.html#cb44-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (m <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(parameters)) {</span>
-<span id="cb44-19"><a href="kfold.html#cb44-19" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Calculamos la media de aucs de un mismo conjunto de parámetros</span></span>
-<span id="cb44-20"><a href="kfold.html#cb44-20" aria-hidden="true" tabindex="-1"></a>      model.auc <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb44-21"><a href="kfold.html#cb44-21" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(k<span class="dv">-1</span>)) {</span>
-<span id="cb44-22"><a href="kfold.html#cb44-22" aria-hidden="true" tabindex="-1"></a>        sub.training.set <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(datos[<span class="sc">-</span><span class="fu">unlist</span>(second.folded.data[][j]),])</span>
-<span id="cb44-23"><a href="kfold.html#cb44-23" aria-hidden="true" tabindex="-1"></a>        validation.set <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(datos[<span class="fu">unlist</span>(second.folded.data[][j]),])</span>
-<span id="cb44-24"><a href="kfold.html#cb44-24" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb44-25"><a href="kfold.html#cb44-25" aria-hidden="true" tabindex="-1"></a>        pred <span class="ot">&lt;-</span> <span class="fu">get.predictions</span>(model, variables, parameters[m,], sub.training.set, validation.set)</span>
-<span id="cb44-26"><a href="kfold.html#cb44-26" aria-hidden="true" tabindex="-1"></a>        model.auc <span class="ot">&lt;-</span> <span class="fu">c</span>(model.auc, pROC<span class="sc">::</span><span class="fu">auc</span>(validation.set<span class="sc">$</span>DEATH_EVENT, <span class="fu">as.vector</span>(pred), <span class="at">levels=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)))</span>
-<span id="cb44-27"><a href="kfold.html#cb44-27" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb44-28"><a href="kfold.html#cb44-28" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">mean</span>(model.auc) <span class="sc">&gt;</span> best.inner.auc) {</span>
-<span id="cb44-29"><a href="kfold.html#cb44-29" aria-hidden="true" tabindex="-1"></a>        best.inner.auc <span class="ot">=</span> <span class="fu">mean</span>(model.auc)</span>
-<span id="cb44-30"><a href="kfold.html#cb44-30" aria-hidden="true" tabindex="-1"></a>        best.inner.model <span class="ot">=</span> parameters[m,]</span>
-<span id="cb44-31"><a href="kfold.html#cb44-31" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb44-32"><a href="kfold.html#cb44-32" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb44-33"><a href="kfold.html#cb44-33" aria-hidden="true" tabindex="-1"></a>    pred <span class="ot">&lt;-</span> <span class="fu">get.predictions</span>(model, variables, best.inner.model, training.set, test.set)</span>
-<span id="cb44-34"><a href="kfold.html#cb44-34" aria-hidden="true" tabindex="-1"></a>    model.métricas <span class="ot">=</span> get.métricas(test.set<span class="sc">$</span>DEATH_EVENT, <span class="fu">as.vector</span>(pred))</span>
-<span id="cb44-35"><a href="kfold.html#cb44-35" aria-hidden="true" tabindex="-1"></a>    results <span class="ot">=</span> <span class="fu">rbind</span>(results, <span class="fu">unname</span>(<span class="fu">c</span>(<span class="fu">toString</span>(variables), best.inner.model, model.métricas[<span class="dv">1</span>], model.métricas[<span class="dv">4</span>], model.métricas[<span class="dv">5</span>])))</span>
-<span id="cb44-36"><a href="kfold.html#cb44-36" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb44-37"><a href="kfold.html#cb44-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (model <span class="sc">==</span> <span class="st">&quot;nn&quot;</span>) <span class="fu">names</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Variables&quot;</span>, <span class="st">&quot;Size&quot;</span>, <span class="st">&quot;Decay&quot;</span>, <span class="st">&quot;ACC&quot;</span>, <span class="st">&quot;F1-score&quot;</span>, <span class="st">&quot;AUC&quot;</span>)</span>
-<span id="cb44-38"><a href="kfold.html#cb44-38" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (model <span class="sc">==</span> <span class="st">&quot;svm&quot;</span>) <span class="fu">names</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Variables&quot;</span>, <span class="st">&quot;Cost&quot;</span>, <span class="st">&quot;Gamma&quot;</span>, <span class="st">&quot;ACC&quot;</span>, <span class="st">&quot;F1-score&quot;</span>, <span class="st">&quot;AUC&quot;</span>)</span>
-<span id="cb44-39"><a href="kfold.html#cb44-39" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (model <span class="sc">==</span> <span class="st">&quot;tree&quot;</span>) {</span>
-<span id="cb44-40"><a href="kfold.html#cb44-40" aria-hidden="true" tabindex="-1"></a>    results <span class="ot">&lt;-</span> results[, <span class="sc">-</span><span class="dv">3</span>]</span>
-<span id="cb44-41"><a href="kfold.html#cb44-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">names</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Variables&quot;</span>, <span class="st">&quot;Cp&quot;</span>, <span class="st">&quot;ACC&quot;</span>, <span class="st">&quot;F1-score&quot;</span>, <span class="st">&quot;AUC&quot;</span>)</span>
-<span id="cb44-42"><a href="kfold.html#cb44-42" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb44-43"><a href="kfold.html#cb44-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (results)</span>
-<span id="cb44-44"><a href="kfold.html#cb44-44" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<span id="cb44-15"><a href="kfold.html#cb44-15" aria-hidden="true" tabindex="-1"></a>    variables <span class="ot">&lt;-</span> <span class="fu">get.variables</span>(method, datos)</span>
+<span id="cb44-16"><a href="kfold.html#cb44-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb44-17"><a href="kfold.html#cb44-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (m <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(parameters)) {</span>
+<span id="cb44-18"><a href="kfold.html#cb44-18" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Calculamos la media de aucs de un mismo conjunto de parámetros</span></span>
+<span id="cb44-19"><a href="kfold.html#cb44-19" aria-hidden="true" tabindex="-1"></a>      model.auc <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb44-20"><a href="kfold.html#cb44-20" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(k<span class="dv">-1</span>)) {</span>
+<span id="cb44-21"><a href="kfold.html#cb44-21" aria-hidden="true" tabindex="-1"></a>        sub.training.set <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(datos[<span class="sc">-</span><span class="fu">unlist</span>(second.folded.data[][j]),])</span>
+<span id="cb44-22"><a href="kfold.html#cb44-22" aria-hidden="true" tabindex="-1"></a>        validation.set <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(datos[<span class="fu">unlist</span>(second.folded.data[][j]),])</span>
+<span id="cb44-23"><a href="kfold.html#cb44-23" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb44-24"><a href="kfold.html#cb44-24" aria-hidden="true" tabindex="-1"></a>        pred <span class="ot">&lt;-</span> <span class="fu">get.predictions</span>(model, variables, parameters[m,], sub.training.set, validation.set)</span>
+<span id="cb44-25"><a href="kfold.html#cb44-25" aria-hidden="true" tabindex="-1"></a>        model.auc <span class="ot">&lt;-</span> <span class="fu">c</span>(model.auc, pROC<span class="sc">::</span><span class="fu">auc</span>(validation.set<span class="sc">$</span>DEATH_EVENT, <span class="fu">as.vector</span>(pred), <span class="at">levels=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)))</span>
+<span id="cb44-26"><a href="kfold.html#cb44-26" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb44-27"><a href="kfold.html#cb44-27" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">mean</span>(model.auc) <span class="sc">&gt;</span> best.inner.auc) {</span>
+<span id="cb44-28"><a href="kfold.html#cb44-28" aria-hidden="true" tabindex="-1"></a>        best.inner.auc <span class="ot">=</span> <span class="fu">mean</span>(model.auc)</span>
+<span id="cb44-29"><a href="kfold.html#cb44-29" aria-hidden="true" tabindex="-1"></a>        best.inner.model <span class="ot">=</span> parameters[m,]</span>
+<span id="cb44-30"><a href="kfold.html#cb44-30" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb44-31"><a href="kfold.html#cb44-31" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb44-32"><a href="kfold.html#cb44-32" aria-hidden="true" tabindex="-1"></a>    pred <span class="ot">&lt;-</span> <span class="fu">get.predictions</span>(model, variables, best.inner.model, training.set, test.set)</span>
+<span id="cb44-33"><a href="kfold.html#cb44-33" aria-hidden="true" tabindex="-1"></a>    model.métricas <span class="ot">=</span> get.métricas(test.set<span class="sc">$</span>DEATH_EVENT, <span class="fu">as.vector</span>(pred))</span>
+<span id="cb44-34"><a href="kfold.html#cb44-34" aria-hidden="true" tabindex="-1"></a>    results <span class="ot">=</span> <span class="fu">rbind</span>(results, <span class="fu">unname</span>(<span class="fu">c</span>(<span class="fu">toString</span>(variables), best.inner.model, model.métricas[<span class="dv">1</span>], model.métricas[<span class="dv">4</span>], model.métricas[<span class="dv">5</span>])))</span>
+<span id="cb44-35"><a href="kfold.html#cb44-35" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-36"><a href="kfold.html#cb44-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (model <span class="sc">==</span> <span class="st">&quot;nn&quot;</span>) <span class="fu">names</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Variables&quot;</span>, <span class="st">&quot;Size&quot;</span>, <span class="st">&quot;Decay&quot;</span>, <span class="st">&quot;ACC&quot;</span>, <span class="st">&quot;F1-score&quot;</span>, <span class="st">&quot;AUC&quot;</span>)</span>
+<span id="cb44-37"><a href="kfold.html#cb44-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (model <span class="sc">==</span> <span class="st">&quot;svm&quot;</span>) <span class="fu">names</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Variables&quot;</span>, <span class="st">&quot;Cost&quot;</span>, <span class="st">&quot;Gamma&quot;</span>, <span class="st">&quot;ACC&quot;</span>, <span class="st">&quot;F1-score&quot;</span>, <span class="st">&quot;AUC&quot;</span>)</span>
+<span id="cb44-38"><a href="kfold.html#cb44-38" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (model <span class="sc">==</span> <span class="st">&quot;tree&quot;</span>) {</span>
+<span id="cb44-39"><a href="kfold.html#cb44-39" aria-hidden="true" tabindex="-1"></a>    results <span class="ot">&lt;-</span> results[, <span class="sc">-</span><span class="dv">3</span>]</span>
+<span id="cb44-40"><a href="kfold.html#cb44-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">names</span>(results) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Variables&quot;</span>, <span class="st">&quot;Cp&quot;</span>, <span class="st">&quot;ACC&quot;</span>, <span class="st">&quot;F1-score&quot;</span>, <span class="st">&quot;AUC&quot;</span>)</span>
+<span id="cb44-41"><a href="kfold.html#cb44-41" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-42"><a href="kfold.html#cb44-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (results)</span>
+<span id="cb44-43"><a href="kfold.html#cb44-43" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 <div id="métricas" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Métricas<a href="kfold.html#métricas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
